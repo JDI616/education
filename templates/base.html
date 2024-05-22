@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}MyTitle{% endblock %}</title>
+	<link
+      rel="stylesheet"
+      href="{{url_for('static', filename='style/style.css')}}" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="main-window">
+	<div class="main-menu">
+	<div class="reg-btn"><a href="#" class="registration-button">Регистрация</a></div>
+	</div>
+
+</div>
+
+<!--Form registration-->
+<div class="form-registration">
+    <h2>Веселая Форма регистрации :)</h2>
+    <form action="" method="post">
+      <div class="input-field">
+        <i class="fa fa-user"></i>
+        <input type="text" name="name" placeholder="Имя" />
+      </div>
+      
+      <div class="input-field">
+        <i class="fa fa-envelope"></i>
+        <input type="email" name="email" placeholder="Email" required />
+      </div>
+      <div class="input-field">
+        <i class="fa fa-lock"></i>
+        <input type="password" name="password" placeholder="Пароль" required />
+      </div>
+      <div class="input-field">
+        <i class="fa fa-lock"></i>
+        <input type="password" name="password" placeholder="Повторите пароль" required />
+      </div>
+
+      <div class="input-field">
+        <input type="radio" name="gender" id="male">
+        <label for="male">Мужчина</label>
+        <input type="radio" name="gender" id="female">
+        <label for="female">Женщина</label>
+      </div>
+      <div class="input-field select-option">
+        <select>
+          <option>Выберите ваш город</option>
+          <option>Москва</option>
+          <option>Казань</option>
+        </select>
+        <div class="select-arrow"></div>
+      </div>
+		<div class="input-field">
+        <i class="fa fa-user"></i>
+        <input type="text" name="name" placeholder="Опишите кем вы хотите стать" required />
+      </div>
+      <div class="input-field">
+        <input type="checkbox" id="terms">
+        <label for="terms">Я принимаю соглашение на рабство</label>
+      </div>
+      <div class="input-field">
+        <input type="checkbox" id="newsletter">
+        <label for="newsletter">Согласен получать рассылку</label>
+      </div>
+      <input class="button" type="submit" value="Зарегистрироваться">
+    </form>
+  </div>
+{% block content %} {% endblock %}
+<script src="{{url_for('static', filename='/javascript//js.js')}}"></script>
+</body>
+</html>
