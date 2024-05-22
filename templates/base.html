@@ -11,14 +11,17 @@
 <body>
 <div class="main-window">
 	<div class="main-menu">
-	<div class="reg-btn"><a href="#" class="registration-button">Регистрация</a></div>
+		<div class="box-btn-lk">
+		<a href="#" onclick="document.getElementById('form-authentication').style.display='block'" class="authentication-button">Войти</a>
+		<a href="#" class="registration-button">Регистрация</a>
+			</div>
 	</div>
 
 </div>
 
 <!--Form registration-->
-<div class="form-registration">
-    <h2>Веселая Форма регистрации :)</h2>
+<div class="form-registration modal">
+    <h2>Форма регистрации</h2>
     <form action="" method="post">
       <div class="input-field">
         <i class="fa fa-user"></i>
@@ -67,6 +70,23 @@
       <input class="button" type="submit" value="Зарегистрироваться">
     </form>
   </div>
+
+<!--form authentication-->
+<div class="form-authentication modal" id="form-authentication">
+    <h2>Вход</h2>
+    <form action="" method="post">
+      <div class="input-field">
+        <i class="fa fa-envelope"></i>
+        <input type="email" name="email" placeholder="Email" required />
+      </div>
+      <div class="input-field">
+        <i class="fa fa-lock"></i>
+        <input type="password" name="password" placeholder="Пароль" required />
+      </div>
+      <input class="button" type="submit" value="Войти">
+    </form>
+</div>
+
 {% block content %} {% endblock %}
 <script src="{{url_for('static', filename='/javascript//js.js')}}"></script>
 </body>
